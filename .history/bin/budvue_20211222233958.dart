@@ -52,8 +52,10 @@ void displayNumberFromOneToHundred(int maxNumber) {
 }
 
 void main(List<String> arguments) {
-  
-  // Use Isolet to delegate the heavy compute and leave the main isolate free for any render
   Isolate.spawn(displayNumberFromOneToHundred, 100);
-  
+  // try {
+  //   displayNumberFromOneToHundred();
+  // } on Exception catch (e) {
+  //   print(e.toString());
+  // }
 }

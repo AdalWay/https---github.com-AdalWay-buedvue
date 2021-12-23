@@ -52,8 +52,7 @@ void displayNumberFromOneToHundred(int maxNumber) {
 }
 
 void main(List<String> arguments) {
-  
-  // Use Isolet to delegate the heavy compute and leave the main isolate free for any render
   Isolate.spawn(displayNumberFromOneToHundred, 100);
   
-}
+}￼Remolacha – Noticias Republica DominicanaEl Blog #1 de los dominicanos
+

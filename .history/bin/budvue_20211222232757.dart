@@ -30,10 +30,10 @@ extension _AdalbertoExtForBudvue on int {
   }
 }
 
-void displayNumberFromOneToHundred(int maxNumber) {
+void displayNumberFromOneToHundred() {
   const name = 'Adalberto';
 
-  for (var i = 1; i <= maxNumber; i++) {
+  for (var i = 1; i <= 100; i++) {
     if (i.isMultipleOf(3) && i.isMultipleOf(5)) {
       print("Budvue should consider $name for this position");
       continue;
@@ -52,8 +52,10 @@ void displayNumberFromOneToHundred(int maxNumber) {
 }
 
 void main(List<String> arguments) {
-  
-  // Use Isolet to delegate the heavy compute and leave the main isolate free for any render
-  Isolate.spawn(displayNumberFromOneToHundred, 100);
-  
+  Isolate.spawn(
+  // try {
+  //   displayNumberFromOneToHundred();
+  // } on Exception catch (e) {
+  //   print(e.toString());
+  // }
 }

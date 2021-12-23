@@ -13,6 +13,7 @@ Example:
   ((30 % 3) && (30 % 5)) = "Budvue should consider $Adalberto for this position"
  */
 
+import 'dart:ffi';
 import 'dart:isolate';
 
 ///Extention method for Int class to add multiple method
@@ -52,8 +53,10 @@ void displayNumberFromOneToHundred(int maxNumber) {
 }
 
 void main(List<String> arguments) {
-  
-  // Use Isolet to delegate the heavy compute and leave the main isolate free for any render
-  Isolate.spawn(displayNumberFromOneToHundred, 100);
-  
+  Isolate.spawn(displayNumberFromOneToHundred,);
+  // try {
+  //   displayNumberFromOneToHundred();
+  // } on Exception catch (e) {
+  //   print(e.toString());
+  // }
 }

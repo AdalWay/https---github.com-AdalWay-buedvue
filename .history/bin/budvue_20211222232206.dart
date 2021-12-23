@@ -13,15 +13,15 @@ Example:
   ((30 % 3) && (30 % 5)) = "Budvue should consider $Adalberto for this position"
  */
 
-import 'dart:isolate';
-
 ///Extention method for Int class to add multiple method
 extension _AdalbertoExtForBudvue on int {
+
+
   ///Check for the multiple of a number, where `multiple` variable is the multiple. Returns a bolean.
   /// ```dart
   /// 3.isMultipleOf(3) = true
   /// ```
-
+  
   bool isMultipleOf(int multiple) {
     if (multiple.isNegative) {
       throw Exception('The "multiple" variable need to be a Positive Number');
@@ -30,10 +30,10 @@ extension _AdalbertoExtForBudvue on int {
   }
 }
 
-void displayNumberFromOneToHundred(int maxNumber) {
+displayNumberFromOneToHundred() {
   const name = 'Adalberto';
 
-  for (var i = 1; i <= maxNumber; i++) {
+  for (var i = 1; i <= 100; i++) {
     if (i.isMultipleOf(3) && i.isMultipleOf(5)) {
       print("Budvue should consider $name for this position");
       continue;
@@ -51,9 +51,16 @@ void displayNumberFromOneToHundred(int maxNumber) {
   }
 }
 
+compu
+
+
+
+
+
 void main(List<String> arguments) {
-  
-  // Use Isolet to delegate the heavy compute and leave the main isolate free for any render
-  Isolate.spawn(displayNumberFromOneToHundred, 100);
-  
+  try {
+    displayNumberFromOneToHundred();
+  } on Exception catch (e) {
+    print(e.toString());
+  }
 }

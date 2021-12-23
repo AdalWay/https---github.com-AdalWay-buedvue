@@ -1,1 +1,1 @@
-A simple command-line application.
+This version use Isolate to improve the heavy compute. 
